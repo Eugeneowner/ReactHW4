@@ -4,10 +4,6 @@ import {
     addToWish,
     removeToBasket,
     removeWish,
-    confirmOrder,
-    confirmWish,
-    handelBuyCancel,
-    handelWishCancel,
     saveAuto
  } from "./redux/mainReduser";
 import App from "./App";
@@ -19,11 +15,8 @@ const mapDispatchToProps = {
     addToWish,
     removeToBasket,
     removeWish,
-    confirmOrder,
-    confirmWish,
-    handelBuyCancel,
-    handelWishCancel,
     saveAuto
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+

@@ -20,7 +20,17 @@ const initialState = {
         localStorage.getItem('wishList')
     ),
     countBuy: parseInt(localStorage.getItem('countBuy')),
-    countWish: parseInt(localStorage.getItem('countWish'))
+    countWish: parseInt(localStorage.getItem('countWish')),
+    basketModal: {
+        type: "basket",
+        title : "Buy you Rolls-Royce",
+        text : "BUY NOW..."
+    },
+    wishModal: {
+        type: "wish",
+        title : "Wish list",
+        text : "Confirm add to wish list"
+    }
 }
 
 const mainReduser = (state = initialState, action) => {
@@ -37,8 +47,8 @@ const mainReduser = (state = initialState, action) => {
         })
         case REMOVE_BASKET: return ({
             ...state,
-            wishList: state.wishList.filter((id) => id !== action.idCandidate),
-            countWish: state.countWish -1
+            basketList: state.basketList.filter((id) => id !== action.idCandidate),
+            countBuy: state.countBuy -1
             
         })
         case REMOVE_WISH: return ({
@@ -53,7 +63,7 @@ const mainReduser = (state = initialState, action) => {
                 state.buyCandidate 
             ],
             countBuy: state.countBuy +1,
-            buyCandidate: action.idCandidate, 
+            buyCandidate: null, 
             isBuy: false
         })
         case CONFIRM_WISH: return ({
