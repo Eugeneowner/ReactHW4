@@ -9,13 +9,13 @@ const Wish = (props) => {
         props.addToWish(idCandidate)
     }
     const handleRemoveWish = (idCandidate) => {
-       props.removeToBasket(idCandidate)
+       props.removeWish(idCandidate)
         localStorage.setItem('countWish', props.countWish);
         localStorage.setItem('wishList', JSON.stringify(props.wishList))
     }
 
     const handleRemoveBasket = (idCandidate) => {
-       props.removeWish(idCandidate)
+       props.removeToBasket(idCandidate)
         localStorage.setItem('basketList', JSON.stringify(props.basketList))
         localStorage.setItem('countBuy',props.countBuy)
     }
